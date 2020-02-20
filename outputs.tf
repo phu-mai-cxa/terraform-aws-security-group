@@ -7,6 +7,11 @@ output "this_security_group_id" {
   )[0]
 }
 
+output "security_group_id" {
+  description = "The ID of the security group"
+  value = aws_security_group.this.*.id
+}
+
 output "this_security_group_vpc_id" {
   description = "The VPC ID"
   value = concat(
